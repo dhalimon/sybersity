@@ -1,0 +1,99 @@
+#!/bin/bash
+sudo apt-get update && sudo apt-get upgrade  && sudo apt-get dist-upgrade -y
+apt-get install gdebi -y
+sudo apt install gedit -y
+#java
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update -y
+sudo apt-get install oracle-java8-installer -y
+sudo apt-get install oracle-java8-set-default
+sudo apt-get install  gconf-editor -y
+
+#mysql - 
+sudo apt-get install mysql-server -y
+sudo cp -avr /etc/mysql/mysql.conf.d/mysqld.cnf /sudo cp -avr /etc/mysql/mysql.conf.d/mysqld.cn.bakf
+sudo cp -avr /etc/mysql/mysql.conf.d/mysqld.cnf  /YourScriptDirectory/backup/originalfile/mysqld.conf.bak
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/mysqld /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#samba
+sudo apt-get update sudo apt-get install samba -y
+sudo smbpasswd -a dhalimon
+sudo service smbd restart && sudo service nmbd restart
+sudo apt-get update -y
+#clipit 
+sudo apt-get install clipit -y
+#bqtorrent -  
+sudo add-apt-repository ppa:hydr0g3n/qbittorrent-stable - y &&  sudo apt-get update &&  sudo apt-get install qbittorrent -y
+#ssh - 
+sudo apt install openssh-client && sudo apt install openssh-server -y
+#putty - 
+sudo apt-get install putty -y
+
+sudo apt-get update -y
+#dropbox - 
+#sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ wily main" >> /etc/apt/#sources.list.d/dropbox.list' 
+#sudo apt-get -y install nautilus-dropbox
+
+#php - 
+sudo apt-get install php7 -y
+
+#filebot - 
+ #sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update - y &&
+ #sudo apt-get install oracle-java8-installer gdebi - y &&
+ wget sourceforge.net/projects/filebot/files/filebot/FileBot_4.7.2/filebot_4.7.2_amd64.deb && sudo apt-get gdebi install ubuntu -y &&
+ sudo gdebi filebot_4.7.2_amd64.deb
+sudo dpkg -r filebot && sudo dpkg -i filebot_4.7.2_amd64.deb
+
+
+#firewall turn
+#vlc
+sudo apt-get install vlc browser-plugin-vlc -y
+#pycahrm
+#python 3 idle
+sudo apt-get install ipython -y
+#qbittorent
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable &&
+      sudo apt-get update && sudo apt-get install qbittorrent 
+      #sudo apt-get install -y nautilus-admin
+      #nautilus -q
+#adminopen
+#sudo add-apt-repository ppa:noobslab/apps &&
+#sudo apt-get update &&
+#sudo apt-get install open-as-administrator
+#export
+sudo apt-get install nfs-kernel-server nfs-common portmap -y
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/exports /etc/exports
+sudo service nfs-kernel-server restart
+   sudo exportfs -ra
+
+sudo apt-get update -y
+
+#filezilla
+ sudo add-apt-repository ppa:n-muench/programs-ppa
+ sudo apt-get update -y
+ sudo apt-get install filezilla -y
+#pycharm
+sudo add-apt-repository ppa:mystic-mirage/pycharm
+sudo apt-get update -y
+sudo apt-get install pycharm-community
+
+#kodi - 
+sudo apt-get install software-properties-common && sudo add-apt-repository ppa:team-xbmc/ppa && sudo apt-get update && sudo apt-get install kodi -y
+
+
+
+#copy to new
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/interfaces /etc/network/interfaces
+#sudo cp  -r --preserve=all  /YourScriptDirectory/backup/apt /etc/apt
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/smb.conf /etc/samba/smb.conf
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/group /etc/group
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/hostname /etc/hostname
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/ssh /etc/ssh
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/hosts /etc/hosts
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/exports /etc/exports
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/.bash_aliases  /home/dhalimon/bash_aliases
+sudo cp  -r --preserve=all  /YourScriptDirectory/backup/bash.bashrc /etc/bash.bashrc
+sudo cp -avr /etc/fstab /etc/fstab.bak
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get autoremove -y
+sudo apt-get clean
