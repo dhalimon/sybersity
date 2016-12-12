@@ -1,0 +1,9 @@
+#!/bin/bash
+######## https://www.filebot.net/forums/viewtopic.php?f=4&t=5#p205 ################
+#filebot -script fn:artwork.tvdb  -non-strict 
+#filebot -script fn:artwork.tmdb -non-strict  /path/to/movies/
+filebot -script fn:suball -non-strict /path/to/movies/
+filebot -script fn:suball -non-strict /TVShows/ 
+filebot -script fn:artwork.tvdb -non-strict  TVShows/  
+filebot -script fn:cleaner --def minsize=5MB /path/to/movies
+filebot -script fn:cleaner --def minsize /TVShows/ 
