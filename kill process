@@ -1,0 +1,5 @@
+#!/bin/bash
+top
+echo "Kill this process"
+read varname
+kill -9 $varname
