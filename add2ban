@@ -1,0 +1,7 @@
+#!/bin/bash
+#ask for banned ip
+while :; do
+	echo insert banned ip address
+	read varname
+	echo "0.0.0.0 $varname" >> /etc/hosts
+done
