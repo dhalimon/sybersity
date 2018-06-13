@@ -1,0 +1,6 @@
+ECHO OFF
+ECHO net stop wuauserv
+ECHO net stop bits
+ECHO net stop dosvc
+
+PAUSE
