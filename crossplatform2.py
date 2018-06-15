@@ -7,8 +7,6 @@ if sys.platform[:3] == 'win':
         print ('on Windows')
 else:
     fd = open("/etc/hosts", "a")
-    #input = input("name to ban?")
-
     fd.write("0.0.0.0 " + input + "\n")
     print('on Linux')
 
