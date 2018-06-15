@@ -1,0 +1,4 @@
+fd = open("/home/user/Downloads/practicehost","a")
+input = input("name to ban?")
+
+fd.write("0.0.0.0 " + input + "\n")
